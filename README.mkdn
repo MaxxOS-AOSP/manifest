@@ -29,6 +29,36 @@ TARGET_BUILD_GAPPS := true
  TARGET_ENABLE_BLUR := true
 ```
 
+### Version / About-phone banner flags (Optional)
+
+The Settings → About phone header reads these `ro.maxx.*` properties. Chipset, phone number, etc. are auto-detected; the ROM-identity ones come from `vendor/yaap/config/version.mk` and can be overridden in the device makefile (`device.mk` / `yaap_device.mk`):
+
+```make
+# device/<brand>/<device>/device.mk
+MAXX_BUILDTYPE := OFFICIAL
+MAXX_MAINTAINER := yourname
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.maxx.maintainer=$(MAXX_MAINTAINER)
+```
+
+`MAXX_BUILDTYPE` controls the official/community badge (use `OFFICIAL`; default is `HOMEMADE`). Add `ro.maxx.maintainer=$(MAXX_MAINTAINER)` as above or via `vendor/yaap/config/version.mk`.
+
+| Flag | Default | Sets |
+| --- | --- | --- |
+| `MAXX_BUILDTYPE` | `HOMEMADE` | `ro.maxx.buildtype` — controls the About phone official/community badge. Use `OFFICIAL` for official builds. |
+| `MAXX_MAINTAINER` | *(none)* | Add `ro.maxx.maintainer=$(MAXX_MAINTAINER)` to version.mk and export this env var to show the maintainer name in About phone. |
+| `MAXX_BUILD_VERSION` | `$(PLATFORM_VERSION)` | `ro.maxx.build.version` |
+| `MAXX_VERSION` | version-buildtype-device-date | `ro.maxx.version` |
+| `MAXX_BUILD` / `TARGET_PRODUCT` | lunch choice | `ro.maxx.device` |
+| `BUILD_DATE` | date | `ro.maxx.build.date` |
+
+Example:
+
+```bash
+export MAXX_MAINTAINER=yourname   # after adding ro.maxx.maintainer to vendor/yaap/config/version.mk
+MAXX_BUILDTYPE=OFFICIAL m yaap
+```
+
 
 
 ## Building the source
