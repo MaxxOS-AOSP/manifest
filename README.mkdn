@@ -1,4 +1,4 @@
-YAAP
+MaxxOS AOSP 
 ==============
 
 Getting Started
@@ -7,20 +7,34 @@ Getting Started
 To get started with Android, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
 
-To initialize your local repository using the YAAP trees, use a command like this:
+To initialize your local repository using the MaxxOS trees, use a command like this:
 
 ```bash
-repo init -u https://github.com/yaap/manifest.git -b seventeen --git-lfs
+repo init -u https://github.com/MaxxOS-AOSP/manifest.git -b seventeen --git-lfs
 ```
 Then to sync up:
 ```bash
 repo sync -j$(nproc --all) --no-tags --no-clone-bundle --current-branch
 ```
 
-Building the source
+### Build Configuration Flags (Optional)
+If you want to include Google Apps (GApps) directly in your build, make sure to put flag in maxx_device.mk flag before starting the compilation:
+
+```bash
+TARGET_BUILD_GAPPS := true
+```
+# If you want to enable blur :
+
+```bash
+ TARGET_ENABLE_BLUR := true
+```
+
+
+
+## Building the source
 ---------------
 
-The source at YAAP is well configured for building.
+The source at MaxxOS AOSP is well configured for building.
 
 ```bash
 source build/envsetup.sh

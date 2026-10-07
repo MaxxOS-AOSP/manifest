@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote  name="gitlab"
+           fetch="https://gitlab.com/" />
+
+
+  <remote  name="maxx"
+           fetch="https://github.com/MaxxOS-AOSP"
+           revision="refs/heads/seventeen" />
+
+  <!-- General -->
+  <project path="art" name="art" remote="maxx" />
+  <project path="bootable/deprecated-ota" name="bootable_deprecated-ota" remote="maxx" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="maxx" />
+  <project path="bionic" name="bionic" remote="maxx" />
+  <project path="development" name="development" remote="maxx" />
+  <project path="manifest" name="manifest" remote="maxx" />
+
+  <!-- Build -->
+  <project path="build/make" name="build_make" remote="maxx" >
+   <copyfile src="core/root.mk" dest="Makefile" />
+   <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+   <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+   <linkfile src="core" dest="build/core" />
+   <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+   <linkfile src="target" dest="build/target" />
+   <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="maxx" >
+   <linkfile src="root.bp" dest="Android.bp" />
+   <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- Device -->
+  <project path="device/lineage/sepolicy" name="device_lineage_sepolicy" remote="maxx" />
+  <project path="device/mediatek/sepolicy_vndr" name="device_mediatek_sepolicy_vndr" remote="maxx" />
+  <project path="device/qcom/sepolicy_vndr/legacy-um" name="device_qcom_sepolicy_vndr_legacy-um" remote="maxx" />
+  <project path="device/qcom/sepolicy_vndr/sm8650" name="device_qcom_sepolicy_vndr_sm8650" remote="maxx" />
+
+  <!-- External -->
+  <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" remote="maxx" />
+  <project path="external/bouncycastle" name="external_bouncycastle" remote="maxx" />
+  <project path="external/vanadium" name="GrapheneOS/platform_external_vanadium" remote="gitlab" revision="16-qpr2" clone-depth="1" />
+  <project path="external/ant-wireless/ant_client" name="external_ant-wireless_ant_client" remote="maxx" />
+  <project path="external/ant-wireless/ant_service" name="external_ant-wireless_ant_service" remote="maxx" />
+  <project path="external/avb" name="external_avb" remote="maxx" />
+  <project path="external/bash" name="external_bash" remote="maxx" />
+  <project path="external/dng_sdk" name="external_dng_sdk" remote="maxx" />
+  <project path="external/dtc" name="external_dtc" remote="maxx" />
+  <project path="external/e2fsprogs" name="external_e2fsprogs" remote="maxx" />
+  <project path="external/erofs-utils" name="external_erofs-utils" remote="maxx" />
+  <project path="external/exfatprogs" name="external_exfatprogs" remote="maxx" />
+  <project path="external/f2fs-tools" name="external_f2fs-tools" remote="maxx" />
+  <project path="external/freetype" name="external_freetype" remote="maxx" />
+  <project path="external/htop" name="external_htop" remote="maxx" />
+  <project path="external/libcupsfilters" name="external_libcupsfilters" remote="maxx" />
+  <project path="external/libcxx" name="external_libcxx" remote="maxx" />
+  <project path="external/libdav1d" name="external_libdav1d" remote="maxx" />
+  <project path="external/libfuse" name="external_libfuse" remote="maxx" />
+  <project path="external/libjpeg-turbo" name="external_libjpeg-turbo" remote="maxx" />
+  <project path="external/libjxl" name="external_libjxl" remote="maxx" />
+  <project path="external/libhevc" name="external_libhevc" remote="maxx" />
+  <project path="external/libncurses" name="external_libncurses" remote="maxx" />
+  <project path="external/libpng" name="external_libpng" remote="maxx" />
+  <project path="external/libppd" name="external_libppd" remote="maxx" />
+  <project path="external/libxml2" name="external_libxml2" remote="maxx" />
+  <project path="external/mksh" name="external_mksh" remote="maxx" />
+  <project path="external/setupcompat" name="external_setupcompat" remote="maxx" />
+  <project path="external/skia" name="external_skia" remote="maxx" />
+  <project path="external/sqlite" name="external_sqlite" remote="maxx" />
+  <project path="external/tensorflow" name="external_tensorflow" remote="maxx" />
+  <project path="external/tinycompress" name="external_tinycompress" remote="maxx" />
+  <project path="external/vim" name="external_vim" remote="maxx" />
+  <project path="external/vixl" name="external_vixl" remote="maxx" />
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="maxx" />
+  <project path="external/zstd" name="external_zstd" remote="maxx" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/av" name="frameworks_av" remote="maxx" />
+  <project path="frameworks/base" name="frameworks_base" remote="maxx" />
+  <project path="frameworks/libs/systemui" name="frameworks_libs_systemui" remote="maxx" />
+  <project path="frameworks/minikin" name="frameworks_minikin" remote="maxx" />
+  <project path="frameworks/native" name="frameworks_native" remote="maxx" />
+  <project path="frameworks/opt/colorpicker" name="frameworks_opt_colorpicker" remote="maxx" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="maxx" />
+  <project path="frameworks/opt/timezonepicker" name="frameworks_opt_timezonepicker" remote="maxx" />
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="maxx" />
+  <project path="frameworks/rs" name="frameworks_rs" remote="maxx" />
+
+  <!-- Hardware -->
+  <project path="hardware/google/pixel" name="hardware_google_pixel" remote="maxx" />
+  <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" remote="maxx" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="maxx" />
+  <project path="hardware/lineage/compat" name="hardware_lineage_compat" remote="maxx" />
+  <project path="hardware/lineage/interfaces" name="hardware_lineage_interfaces" remote="maxx" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="maxx" />
+  <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="hardware_qcom-caf_sm8150_audio" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom-caf_sm8150_display" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8150/media" name="hardware_qcom-caf_sm8150_media" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8350/display" name="hardware_qcom-caf_sm8350_display" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/audio/agm" name="vendor_qcom_opensource_agm-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/audio/graphservices" name="vendor_qcom_opensource_audioreach-graphservices-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/audio/pal" name="vendor_qcom_opensource_arpal-lx-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/audio/primary-hal" name="hardware_qcom_audio-ar-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/dataipa" name="vendor_qcom_opensource_dataipa-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/data-ipa-cfg-mgr" name="vendor_qcom_opensource_data-ipa-cfg-mgr-sm8650" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/display" name="hardware_qcom-caf_sm8650_display" remote="maxx" />
+  <project path="hardware/qcom-caf/sm8650/media" name="hardware_qcom-caf_sm8650_media" remote="maxx" />
+  <project path="hardware/qcom-caf/wlan" name="hardware_qcom-caf_wlan" remote="maxx" />
+  <project path="hardware/qcom-caf/thermal" name="hardware_qcom-caf_thermal" remote="maxx" />
+  <project path="hardware/qcom-caf/common" remote="maxx" name="hardware_qcom-caf_common" >
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8953/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8953/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8650/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8650/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8650/Android.mk" />
+  </project>
+  <project path="hardware/st/nfc" name="hardware_st_nfc" remote="maxx" />
+  <project path="hardware/nxp/secure_element" name="hardware_nxp_secure_element" remote="maxx" />
+
+  <!-- Kernel -->
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" revision="main-kernel-build-2024" />
+
+  <!--Kernel Config-->
+  <project path="kernel/configs" name="kernel_configs" remote="maxx" />
+
+  <!-- Lindroid -->
+  <project path="libhybris" name="libhybris" remote="maxx" />
+  <project path="external/lxc" name="external_lxc" remote="maxx" />
+  <project path="vendor/lindroid" name="vendor_lindroid" remote="maxx" />
+
+  <!-- Packages -->
+  <project path="packages/apps/Aperture" name="packages_apps_Aperture" remote="maxx" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="maxx" />
+  <project path="packages/apps/CellBroadcastReceiver" name="packages_apps_CellBroadcastReceiver" remote="maxx" />
+  <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="maxx" />
+  <project path="packages/apps/ContactsPicker" name="packages_apps_ContactsPicker" remote="maxx" />
+  <project path="packages/apps/Dialer" name="penguin_packages_apps_Dialer" remote="maxx" />
+  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="maxx" />
+  <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="maxx" />
+  <project path="packages/apps/EmergencyInfo" name="packages_apps_EmergencyInfo" remote="maxx" />
+  <project path="packages/apps/Etar" name="packages_apps_Etar" remote="maxx" />
+  <project path="packages/apps/ExactCalculator" name="packages_apps_ExactCalculator" remote="maxx" />
+  <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="maxx" />
+  <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" remote="maxx" />
+  <project path="packages/apps/KProfiles" name="packages_apps_KProfiles" remote="maxx" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="maxx" />
+  <project path="packages/apps/Matlog" name="packages_apps_Matlog" remote="maxx" />
+  <project path="packages/apps/Messaging" name="Maxx--packages_apps_Messaging" remote="maxx" />
+  <project path="hardware/dolby" name="hardware_dolby" remote="maxx" />
+  <project path="packages/apps/OpenDelta" name="packages_apps_OpenDelta" remote="maxx" />
+  <project sync-s="true" path="packages/apps/OpenEUICC" name="packages_apps_OpenEUICC" remote="maxx" />
+  <project path="packages/apps/Panic" name="CalyxOS/platform_packages_apps_Panic" remote="github" revision="android14" />
+  <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="maxx" />
+  <project path="packages/apps/Ripple" name="CalyxOS/platform_packages_apps_Ripple" remote="github" revision="android15-qpr2" />
+  <project path="packages/apps/Seedvault" name="packages_apps_Seedvault" remote="maxx" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="maxx" />
+  <project path="packages/apps/Settings/YASP" name="packages_apps_YASP" remote="maxx" />
+  <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="maxx" />
+  <project path="packages/apps/SetupWizard" name="packages_apps_SetupWizard" remote="maxx" />
+  <project path="packages/apps/SimpleDeviceConfig" name="packages_apps_SimpleDeviceConfig" remote="maxx" />
+  <project path="packages/apps/Stk" name="packages_apps_Stk" remote="maxx" />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="maxx" />
+  <project path="packages/apps/TV" name="packages_apps_TV" remote="maxx" />
+  <project path="packages/apps/WallpaperPicker2" name="packages_apps_WallpaperPicker2" remote="maxx" />
+  <project path="packages/inputmethods/LatinIME" name="packages_inputmethods_LatinIME" remote="maxx" />
+  <project path="packages/modules/adb" name="packages_modules_adb" remote="maxx" />
+  <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" remote="maxx" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" remote="maxx" />
+  <project path="packages/modules/DnsResolver" name="packages_modules_DnsResolver" remote="maxx" />
+  <project path="packages/modules/Nfc" name="packages_modules_Nfc" remote="maxx" />
+  <project path="packages/modules/Permission" name="packages_modules_Permission" remote="maxx" />
+  <project path="packages/modules/StatsD" name="packages_modules_StatsD" remote="maxx" />
+  <project path="packages/modules/UprobeStats" name="packages_modules_UprobeStats" remote="maxx" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="maxx" />
+  <project path="packages/modules/Uwb" name="packages_modules_Uwb" remote="maxx" />
+  <project path="packages/providers/BlockedNumberProvider" name="packages_providers_BlockedNumberProvider" remote="maxx" />
+  <project path="packages/providers/BookmarkProvider" name="packages_providers_BookmarkProvider" remote="maxx" />
+  <project path="packages/providers/CalendarProvider" name="packages_providers_CalendarProvider" remote="maxx" />
+  <project path="packages/providers/CallLogProvider" name="packages_providers_CallLogProvider" remote="maxx" />
+  <project path="packages/providers/ContactsProvider" name="packages_providers_ContactsProvider" remote="maxx" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="maxx" />
+  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" remote="maxx" />
+  <project path="packages/services/DeviceAsWebcam" name="packages_services_DeviceAsWebcam" remote="maxx" />
+  <project path="packages/services/Iwlan" name="packages_services_Iwlan" remote="maxx" />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="maxx" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="maxx" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="maxx" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/calyx/espeak-ng" name="prebuilts_calyx_espeak-ng" remote="maxx" />
+  <project path="prebuilts/calyx/talkback" name="prebuilts_calyx_talkback" remote="maxx" />
+  <project path="prebuilts/openeuicc-deps" name="prebuilts_openeuicc-deps" remote="maxx" />
+
+  <!-- System -->
+  <project path="system/apex" name="system_apex" remote="maxx" />
+  <project path="system/bpf" name="system_bpf" remote="maxx" />
+  <project path="system/core" name="system_core" remote="maxx" />
+  <project path="system/extras" name="system_extras" remote="maxx" />
+  <project path="system/fs/fs_mgr" name="system_fs_fs_mgr" remote="maxx" />
+  <project path="system/libvintf" name="system_libvintf" remote="maxx" />
+  <project path="system/media" name="system_media" remote="maxx" />
+  <project path="system/memory/libion" name="system_memory_libion" remote="maxx" />
+  <project path="system/memory/libmeminfo" name="system_memory_libmeminfo" remote="maxx" />
+  <project path="system/memory/lmkd" name="system_memory_lmkd" remote="maxx" />
+  <project path="system/netd" name="system_netd" remote="maxx" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="maxx" />
+  <project path="system/update_engine" name="system_update_engine" remote="maxx" />
+  <project path="system/vold" name="system_vold" remote="maxx" />
+
+  <!-- Tools -->
+  <project path="scripts" name="scripts" remote="maxx" revision="master" />
+  <project path="tools/apksig" name="tools_apksig" remote="maxx" />
+  <project path="tools/extract-utils" name="tools_extract-utils" remote="maxx" />
+
+  <!-- Vendor -->
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um" name="vendor_qcom_opensource_data-ipa-cfg-mgr" remote="maxx" />
+  <project path="vendor/qcom/opensource/dataservices" name="vendor_qcom_opensource_dataservices" remote="maxx" />
+  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="maxx" />
+  <project path="vendor/qcom/opensource/power" name="vendor_qcom_opensource_power" remote="maxx" />
+  <project path="vendor/qcom/opensource/usb" name="vendor_qcom_opensource_usb" remote="maxx" />
+  <project path="vendor/qcom/opensource/vibrator" name="vendor_qcom_opensource_vibrator" remote="maxx" />
+  <project path="vendor/google/gms" name="yaosp/vendor_google_gms" remote="gitlab" revision="seventeen" clone-depth="1" />
+  <project path="vendor/google/pixel" name="yaosp/vendor_google_pixel" remote="gitlab" revision="seventeen" clone-depth="1" />
+  <project path="vendor/microg" name="vendor_microg" remote="maxx" />
+  <project path="vendor/themes" name="vendor_themes" remote="maxx" />
+  <project path="vendor/yaap" name="vendor_yaap" remote="maxx" />
+  <project path="vendor/yaap/apps" name="vendor_yaap_apps" remote="maxx" clone-depth="1" />
+
+</manifest>
