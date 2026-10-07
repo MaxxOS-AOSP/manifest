@@ -167,7 +167,7 @@
   <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="maxx" />
   <project path="packages/apps/EmergencyInfo" name="packages_apps_EmergencyInfo" remote="maxx" />
   <project path="packages/apps/Etar" name="packages_apps_Etar" remote="maxx" />
-  <project path="packages/apps/ExactCalculator" name="packages_apps_ExactCalculator" remote="maxx" />
+  <project path="packages/apps/ExactCalculator" name="packages_apps_ExactCalculator" remote="maxx" revision="refs/heads/staging" />
   <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="maxx" />
   <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" remote="maxx" />
   <project path="packages/apps/KProfiles" name="packages_apps_KProfiles" remote="maxx" />
@@ -181,7 +181,7 @@
   <project path="packages/apps/PhoneCommon" name="packages_apps_PhoneCommon" remote="maxx" />
   <project path="packages/apps/Ripple" name="CalyxOS/platform_packages_apps_Ripple" remote="github" revision="android15-qpr2" />
   <project path="packages/apps/Seedvault" name="packages_apps_Seedvault" remote="maxx" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="maxx" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="maxx" revision="refs/heads/staging" />
   <project path="packages/apps/Settings/YASP" name="packages_apps_YASP" remote="maxx" />
   <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="maxx" />
   <project path="packages/apps/SetupWizard" name="packages_apps_SetupWizard" remote="maxx" />
