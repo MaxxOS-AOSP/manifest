@@ -10,7 +10,7 @@ familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
 To initialize your local repository using the MaxxOS trees, use a command like this:
 
 ```bash
-repo init -u https://github.com/MaxxOS-AOSP/manifest.git -b seventeen --git-lfs
+repo init -u https://github.com/MaxxOS-AOSP/manifest.git -b staging --git-lfs
 ```
 Then to sync up:
 ```bash
